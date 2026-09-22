@@ -56,6 +56,7 @@ def brute_force_password() -> list:
             found_passwords.extend(task.result())
     return found_passwords
 
+
 if __name__ == "__main__":
     start_time = time.perf_counter()
     brute_force_password()
