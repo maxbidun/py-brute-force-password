@@ -31,9 +31,6 @@ def check_range(start: int, end: int) -> list[str]:
 
         if password_hash in PASSWORDS_TO_BRUTE_FORCE:
             found_passwords.append(password)
-
-    print(found_passwords)
-
     return found_passwords
 
 
@@ -59,7 +56,8 @@ def brute_force_password() -> list:
 
 if __name__ == "__main__":
     start_time = time.perf_counter()
-    brute_force_password()
+    results = brute_force_password()
+    print("\n".join(sorted(set(results))))
     end_time = time.perf_counter()
 
     print("Elapsed:", end_time - start_time)
